@@ -1,1 +1,19 @@
-<h1>Hola Chu</h1>
+<h1>PRODUCTOS</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>URL</th>
+    <th>DESCRIPTION</th>
+  </tr>
+  <% @vproducts.each do |p| %>
+    <tr>
+      <td><%= p.id %></td>
+      <td><%= p.name %></td>
+      <td><%= p.url %></td>
+      <td><%= p.description %></td>
+    </tr>
+  <% end %>
+
+</table>
