@@ -5,9 +5,24 @@ class ProductsController < ApplicationController
 
   def  new
 
-    @p=Product.new
+    @product=Product.new
 
   end
 
+  def create
+    @product=Product.new(product_paramas)
+    if @product.save
+      redirect_to products_path, notice: "El producto fue publicado con exito"
+    else
+      render :new
+    end
+  end
+
+
+  private
+    def product_paramas
+      params.require(:product).permit(:name, :url, :description)
+
+    end
 
 end
