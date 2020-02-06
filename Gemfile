@@ -10,7 +10,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'puma', '~> 4.1'
 
 
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 
