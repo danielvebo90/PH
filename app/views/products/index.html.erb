@@ -26,9 +26,11 @@
         <% @vproducts.each do |p| %>
           <tr>
             <td><%= p.id %></td>
-            <td><%= p.name %></td>
+            <td><%= link_to p.name, p %></td>
             <td><%= p.url %></td>
             <td><%= p.description %></td>
+            <td><%= link_to "EDITAR", edit_product_path(p) %></td>
+
           </tr>
         <% end %>
 
