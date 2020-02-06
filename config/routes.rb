@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # patch '/products/:id', to: 'products#update'
   # delete '/products/:id' , to: 'products#destroy'
 
-  resources :products
+  resources :products # only: [:index],  except: [:index, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root 'products#index'
 end
