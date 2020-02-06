@@ -29,7 +29,10 @@
             <td><%= link_to p.name, p %></td>
             <td><%= p.url %></td>
             <td><%= p.description %></td>
-            <td><%= link_to "EDITAR", edit_product_path(p) %></td>
+            <td>
+              <%= link_to "EDITAR", edit_product_path(p) %>
+              <%= link_to "ELIMINAR", p , method: :delete, data:{confirm: "¿seguro?"} %>
+            </td>
 
           </tr>
         <% end %>

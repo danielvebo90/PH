@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     @vproducts=Product.all
   end
@@ -10,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product=Product.new(product_paramas)
+    @product=Product.new(product_params)
     if @product.save
       redirect_to products_path, notice: "El producto fue publicado con exito"
     else
@@ -43,8 +44,18 @@ class ProductsController < ApplicationController
 
   end
 
+  def destroy
+
+    product=Product.find(params[:id])
+    product.destroy
+
+    redirect_to products_path, notice: "el producto se elimino con exito"
+
+  end
+
   private
     def product_params
+
       params.require(:product).permit(:name, :url, :description)
 
     end
